@@ -1,4 +1,4 @@
-package com.example.tddprac.product;
+package com.example.tddprac;
 
 import com.google.common.base.CaseFormat;
 import java.util.List;

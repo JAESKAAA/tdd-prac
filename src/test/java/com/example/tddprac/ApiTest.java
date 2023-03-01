@@ -1,6 +1,5 @@
 package com.example.tddprac;
 
-import com.example.tddprac.product.DatabaseCleanUp;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
