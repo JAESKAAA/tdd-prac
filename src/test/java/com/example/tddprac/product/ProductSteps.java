@@ -33,4 +33,9 @@ public class ProductSteps {
             .extract();
     }
 
+    public static UpdateProductRequest 상품수정요청() {
+        final String updateName = "상품 수정";
+        int updatePrice = 20000;
+        return new UpdateProductRequest(updateName, updatePrice, DiscountPolicy.NONE);
+    }
 }
