@@ -22,8 +22,7 @@ public class ProductSteps {
         final String productName = "상품명";
         final int price = 1000;
         final DiscountPolicy discountPolicy = DiscountPolicy.NONE;
-        final AddProductRequest request = new AddProductRequest(productName, price, discountPolicy);
-        return request;
+        return new AddProductRequest(productName, price, discountPolicy);
     }
 
     public static ExtractableResponse<Response> 상품조회요청(Long productId) {
