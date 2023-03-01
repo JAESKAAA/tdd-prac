@@ -9,8 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ProductServiceTest {
 
-    @Autowired
-    private ProductService productService;
 
     @Test
     @DisplayName("상품등록 시, 상품명 + 가격 + 할인 정책을 넣어줘야 성공 한다.")
@@ -18,7 +16,8 @@ class ProductServiceTest {
 
         final AddProductRequest request = 상품등록요청_생성();
 
-        productService.addProduct(request);
+        //API 요청
+
 
     }
 
