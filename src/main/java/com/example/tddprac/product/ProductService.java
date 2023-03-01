@@ -19,14 +19,17 @@ class ProductService {
         productPort.save(product);
     }
 
+    @Transactional(readOnly = true)
     public GetProductResponse getProduct(final Long productId) {
        final Product product = productPort.getProduct(productId);
 
         return new GetProductResponse(product.getId(), product.getProductName(), product.getPrice(),
             product.getDiscountPolicy());
+    }
 
-
-
-
+    @Transactional
+    public void updateProduct(Long productId, UpdateProductRequest request) {
+        Product product = productPort.getProduct(productId);
+        product.update(request.productName(), request.price(), request.discountPolicy());
     }
 }
