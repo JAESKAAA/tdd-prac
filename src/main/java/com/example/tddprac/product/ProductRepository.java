@@ -2,7 +2,9 @@ package com.example.tddprac.product;
 
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.stereotype.Repository;
 
+@Repository
 class ProductRepository {
 
     private Long sequence = 0L;
