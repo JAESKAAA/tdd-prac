@@ -26,7 +26,13 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    //REST API 테스트 라이브러리
     implementation 'io.rest-assured:rest-assured:4.4.0'
+
+    //문자열 포맷팅
+    implementation 'com.google.guava:guava:31.1-jre'
+
+
 
 }
 
