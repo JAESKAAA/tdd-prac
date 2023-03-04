@@ -13,11 +13,13 @@ class OrderService {
     }
 
 
-    public void createOrder(CreateOrderRequest request) {
+    public Long createOrder(CreateOrderRequest request) {
         Product product = orderPort.getProductById(request.productId());
 
         Order order = new Order(product, request.quantity());
 
         orderPort.save(order);
+
+        return order.getId();
     }
 }
