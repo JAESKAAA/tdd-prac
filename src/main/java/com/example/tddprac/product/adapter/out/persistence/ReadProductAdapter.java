@@ -1,20 +1,17 @@
-package com.example.tddprac.product;
+package com.example.tddprac.product.adapter.out.persistence;
 
+import com.example.tddprac.product.application.port.out.ReadProductPort;
+import com.example.tddprac.product.domain.Product;
 import org.springframework.stereotype.Component;
 
 @Component
-class ProductAdapter implements ProductPort {
+class ReadProductAdapter implements ReadProductPort {
 
     private final ProductRepository productRepository;
 
-    ProductAdapter(
+    ReadProductAdapter(
         ProductRepository productRepository) {
         this.productRepository = productRepository;
-    }
-
-    @Override
-    public void save(Product product) {
-        productRepository.save(product);
     }
 
     @Override

@@ -1,9 +1,9 @@
 package com.example.tddprac.product;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
-import org.assertj.core.api.Assertions;
+import com.example.tddprac.product.domain.DiscountPolicy;
+import com.example.tddprac.product.domain.Product;
 import org.junit.jupiter.api.Test;
 
 class ProductTest {

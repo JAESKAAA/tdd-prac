@@ -1,9 +1,7 @@
-package com.example.tddprac.product;
+package com.example.tddprac.product.adapter.out.persistence;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.example.tddprac.product.domain.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 }

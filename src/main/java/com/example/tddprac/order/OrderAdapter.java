@@ -1,7 +1,7 @@
 package com.example.tddprac.order;
 
-import com.example.tddprac.product.Product;
-import com.example.tddprac.product.ProductRepository;
+import com.example.tddprac.product.domain.Product;
+import com.example.tddprac.product.adapter.out.persistence.ProductRepository;
 import org.springframework.stereotype.Service;
 
 @Service

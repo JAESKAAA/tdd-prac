@@ -1,15 +1,16 @@
-package com.example.tddprac.product;
+package com.example.tddprac.product.application.service.dto;
 
+import com.example.tddprac.product.domain.DiscountPolicy;
 import org.springframework.util.Assert;
 
-record GetProductResponse(
+public record GetProductResponse(
     long id,
     String name,
     int price,
     DiscountPolicy discountPolicy
 ) {
 
-    GetProductResponse {
+    public GetProductResponse {
         Assert.notNull(id, "id는 필수입니다.");
         Assert.hasText(name, "상품명은 필수입니다.");
         Assert.notNull(discountPolicy, "할인 정책은 필수입니다.");

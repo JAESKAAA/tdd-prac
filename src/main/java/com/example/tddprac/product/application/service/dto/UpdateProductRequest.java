@@ -1,5 +1,6 @@
-package com.example.tddprac.product;
+package com.example.tddprac.product.application.service.dto;
 
+import com.example.tddprac.product.domain.DiscountPolicy;
 import org.springframework.util.Assert;
 
 public record UpdateProductRequest(

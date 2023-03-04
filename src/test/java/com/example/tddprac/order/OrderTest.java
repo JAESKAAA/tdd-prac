@@ -1,11 +1,9 @@
 package com.example.tddprac.order;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import com.example.tddprac.product.DiscountPolicy;
-import com.example.tddprac.product.Product;
-import org.assertj.core.api.Assertions;
+import com.example.tddprac.product.domain.DiscountPolicy;
+import com.example.tddprac.product.domain.Product;
 import org.junit.jupiter.api.Test;
 
 class OrderTest {

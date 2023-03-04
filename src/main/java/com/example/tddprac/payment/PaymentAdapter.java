@@ -2,8 +2,6 @@ package com.example.tddprac.payment;
 
 import com.example.tddprac.order.Order;
 import com.example.tddprac.order.OrderRepository;
-import com.example.tddprac.product.DiscountPolicy;
-import com.example.tddprac.product.Product;
 import org.springframework.stereotype.Component;
 
 @Component

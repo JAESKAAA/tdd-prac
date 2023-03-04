@@ -1,4 +1,4 @@
-package com.example.tddprac.product;
+package com.example.tddprac.product.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +10,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
 
+/**
+ * 현재는 엔티티로 도메인 로직을 같이 쓰고있지만, 도메인 모델과 영속속 엔티티또한 분리되어야 하는게 변경에 유리할 것으로 생각됨
+ */
+
+//TODO 도메인 모델로 분리하기
 @Entity
 @Table(name = "products")
 @Getter

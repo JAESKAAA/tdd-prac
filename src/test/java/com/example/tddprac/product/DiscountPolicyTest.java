@@ -2,7 +2,7 @@ package com.example.tddprac.product;
 
 import static org.assertj.core.api.Assertions.*;
 
-import org.assertj.core.api.Assertions;
+import com.example.tddprac.product.domain.DiscountPolicy;
 import org.junit.jupiter.api.Test;
 
 class DiscountPolicyTest {

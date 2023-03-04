@@ -1,5 +1,8 @@
 package com.example.tddprac.product;
 
+import com.example.tddprac.product.application.service.dto.AddProductRequest;
+import com.example.tddprac.product.application.service.dto.UpdateProductRequest;
+import com.example.tddprac.product.domain.DiscountPolicy;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;

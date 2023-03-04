@@ -1,6 +1,6 @@
 package com.example.tddprac.order;
 
-import com.example.tddprac.product.Product;
+import com.example.tddprac.product.domain.Product;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
