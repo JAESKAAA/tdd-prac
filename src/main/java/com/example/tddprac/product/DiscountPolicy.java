@@ -1,6 +1,6 @@
 package com.example.tddprac.product;
 
-enum DiscountPolicy {
+public enum DiscountPolicy {
     NONE
 
 }

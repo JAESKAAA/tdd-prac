@@ -16,15 +16,14 @@ import org.springframework.http.MediaType;
 class ProductApiTest extends ApiTest {
 
 
-    private final ProductSteps productSteps = new ProductSteps();
 
     @Test
     @DisplayName("상품등록에 성공하면 201 코드를 반환한다.")
     void 상품등록_API() {
 
-        final var request = productSteps.상품등록요청_생성();
+        final var request = ProductSteps.상품등록요청_생성();
 
-        final var response = productSteps.상품등록요청(request);
+        final var response = ProductSteps.상품등록요청(request);
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
     }
