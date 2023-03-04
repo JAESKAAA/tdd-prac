@@ -2,8 +2,10 @@ package com.example.tddprac.order;
 
 import com.example.tddprac.product.Product;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+public
 class OrderService {
 
     private final OrderPort orderPort;
@@ -13,6 +15,7 @@ class OrderService {
     }
 
 
+    @Transactional
     public Long createOrder(CreateOrderRequest request) {
         Product product = orderPort.getProductById(request.productId());
 
