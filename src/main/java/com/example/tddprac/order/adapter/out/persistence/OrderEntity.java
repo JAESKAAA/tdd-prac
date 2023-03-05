@@ -1,4 +1,4 @@
-package com.example.tddprac.order;
+package com.example.tddprac.order.adapter.out.persistence;
 
 import com.example.tddprac.product.adapter.out.persistence.ProductEntity;
 import com.example.tddprac.product.domain.Product;

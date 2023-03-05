@@ -1,7 +1,7 @@
 package com.example.tddprac.payment.application.service;
 
-import com.example.tddprac.order.Order;
-import com.example.tddprac.order.OrderPort;
+import com.example.tddprac.order.domain.Order;
+import com.example.tddprac.order.application.port.out.ReadOrderJpaPort;
 import com.example.tddprac.payment.application.port.out.PaymentPort;
 import com.example.tddprac.payment.domain.dto.PaymentRequest;
 import com.example.tddprac.payment.application.port.in.PaymentWriteUsecase;
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 class PaymentWriteService implements PaymentWriteUsecase {
 
-    private final OrderPort orderPort;
+    private final ReadOrderJpaPort readOrderJpaPort;
     private final PaymentPort paymentPort;
     private final WritePaymentJpaPort writePaymentJpaPort;
 
@@ -24,7 +24,7 @@ class PaymentWriteService implements PaymentWriteUsecase {
     @Override
     public void payment(PaymentRequest request) {
 
-        final Order order = orderPort.getOrder(request.orderId());
+        final Order order = readOrderJpaPort.getOrder(request.orderId());
 
         final Payment payment = new Payment(order, request.cardNumber());
 

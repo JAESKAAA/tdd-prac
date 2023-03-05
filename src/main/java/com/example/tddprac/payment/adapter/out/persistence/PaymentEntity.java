@@ -1,6 +1,6 @@
 package com.example.tddprac.payment.adapter.out.persistence;
 
-import com.example.tddprac.order.OrderEntity;
+import com.example.tddprac.order.adapter.out.persistence.OrderEntity;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

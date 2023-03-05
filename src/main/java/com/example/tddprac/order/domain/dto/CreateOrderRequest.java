@@ -1,4 +1,4 @@
-package com.example.tddprac.order;
+package com.example.tddprac.order.domain.dto;
 
 import org.springframework.util.Assert;
 

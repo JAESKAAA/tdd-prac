@@ -1,5 +1,7 @@
-package com.example.tddprac.order;
+package com.example.tddprac.order.adapter.out.persistence.mapper;
 
+import com.example.tddprac.order.domain.Order;
+import com.example.tddprac.order.adapter.out.persistence.OrderEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;

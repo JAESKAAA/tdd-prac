@@ -1,5 +1,6 @@
 package com.example.tddprac.order;
 
+import com.example.tddprac.order.domain.dto.CreateOrderRequest;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;

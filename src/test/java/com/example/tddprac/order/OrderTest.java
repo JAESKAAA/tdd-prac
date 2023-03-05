@@ -2,6 +2,7 @@ package com.example.tddprac.order;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.example.tddprac.order.domain.Order;
 import com.example.tddprac.product.domain.DiscountPolicy;
 import com.example.tddprac.product.domain.Product;
 import org.junit.jupiter.api.Test;

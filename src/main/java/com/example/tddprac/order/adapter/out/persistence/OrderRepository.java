@@ -1,4 +1,4 @@
-package com.example.tddprac.order;
+package com.example.tddprac.order.adapter.out.persistence;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

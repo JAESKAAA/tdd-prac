@@ -1,4 +1,4 @@
-package com.example.tddprac.order;
+package com.example.tddprac.order.domain;
 
 import com.example.tddprac.product.domain.Product;
 import lombok.Getter;

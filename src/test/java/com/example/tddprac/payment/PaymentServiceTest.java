@@ -1,6 +1,6 @@
 package com.example.tddprac.payment;
 
-import com.example.tddprac.order.OrderService;
+import com.example.tddprac.order.application.service.OrderWriteService;
 import com.example.tddprac.order.OrderSteps;
 import com.example.tddprac.payment.application.port.in.PaymentWriteUsecase;
 import com.example.tddprac.payment.domain.dto.PaymentRequest;
@@ -20,12 +20,12 @@ class PaymentServiceTest {
     ProductWriteUsecase productWriteUsecase;
 
     @Autowired
-    OrderService orderService;
+    OrderWriteService orderWriteService;
 
     @Test
     void 상품주문() {
         productWriteUsecase.addProduct(ProductSteps.상품등록요청_생성());
-        orderService.createOrder(OrderSteps.상품주문요청_생성());
+        orderWriteService.createOrder(OrderSteps.상품주문요청_생성());
         PaymentRequest request = PaymentSteps.주문결제요청_생성();
         paymentWriteUsecase.payment(request);
     }

@@ -1,15 +1,7 @@
 package com.example.tddprac.payment.domain;
 
-import com.example.tddprac.order.Order;
-import com.example.tddprac.order.OrderEntity;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import lombok.AccessLevel;
+import com.example.tddprac.order.domain.Order;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
 
 @Getter

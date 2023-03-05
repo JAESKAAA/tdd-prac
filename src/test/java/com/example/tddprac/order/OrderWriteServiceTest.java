@@ -1,5 +1,7 @@
 package com.example.tddprac.order;
 
+import com.example.tddprac.order.application.service.OrderWriteService;
+import com.example.tddprac.order.domain.dto.CreateOrderRequest;
 import com.example.tddprac.product.ProductSteps;
 import com.example.tddprac.product.application.port.in.ProductWriteUsecase;
 import org.junit.jupiter.api.DisplayName;
@@ -8,10 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OrderServiceTest {
+class OrderWriteServiceTest {
 
     @Autowired
-    OrderService orderService;
+    OrderWriteService orderWriteService;
 
     @Autowired
     ProductWriteUsecase productWriteUsecase;
@@ -23,7 +25,7 @@ class OrderServiceTest {
 
         CreateOrderRequest request = OrderSteps.상품주문요청_생성();
 
-        orderService.createOrder(request);
+        orderWriteService.createOrder(request);
 
 
     }
