@@ -1,10 +1,10 @@
 package com.example.tddprac.order;
 
-import com.example.tddprac.product.domain.Product;
-
-interface OrderPort {
-
-    Product getProductById(Long productId);
+public interface OrderPort {
 
     void save(Order order);
+
+    Order getOrder(Long orderId);
+
+
 }

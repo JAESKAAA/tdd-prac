@@ -2,6 +2,8 @@ package com.example.tddprac.payment;
 
 import com.example.tddprac.order.OrderService;
 import com.example.tddprac.order.OrderSteps;
+import com.example.tddprac.payment.application.port.in.PaymentWriteUsecase;
+import com.example.tddprac.payment.domain.dto.PaymentRequest;
 import com.example.tddprac.product.application.port.in.ProductWriteUsecase;
 import com.example.tddprac.product.ProductSteps;
 import org.junit.jupiter.api.Test;
@@ -12,7 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class PaymentServiceTest {
 
     @Autowired
-    PaymentService paymentService;
+    PaymentWriteUsecase paymentWriteUsecase;
 
     @Autowired
     ProductWriteUsecase productWriteUsecase;
@@ -25,7 +27,7 @@ class PaymentServiceTest {
         productWriteUsecase.addProduct(ProductSteps.상품등록요청_생성());
         orderService.createOrder(OrderSteps.상품주문요청_생성());
         PaymentRequest request = PaymentSteps.주문결제요청_생성();
-        paymentService.payment(request);
+        paymentWriteUsecase.payment(request);
     }
 
 }

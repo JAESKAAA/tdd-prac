@@ -1,30 +1,31 @@
-package com.example.tddprac.product.domain;
+package com.example.tddprac.product.adapter.out.persistence;
 
-import lombok.Builder;
+import com.example.tddprac.product.domain.DiscountPolicy;
+import com.example.tddprac.product.domain.Product;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
 
+@Entity
+@Table(name = "products")
 @Getter
-public class Product {
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class ProductEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String productName;
     private int price;
     private DiscountPolicy discountPolicy;
 
-    @Builder
-    public Product(Long id, String productName, int price, DiscountPolicy discountPolicy) {
-        Assert.hasText(productName, "상품명은 필수입니다.");
-        Assert.isTrue(price > 0, "상품가격은 0보다 커야합니다.");
-        Assert.notNull(discountPolicy, "할인정책은 필수 입니다.");
-        Assert.notNull(id, "변환시 id값 필수");
-        this.id = id;
-        this.productName = productName;
-        this.price = price;
-        this.discountPolicy = discountPolicy;
-    }
-
-    public Product(String productName, int price, DiscountPolicy discountPolicy) {
+    public ProductEntity(String productName, int price, DiscountPolicy discountPolicy) {
         Assert.hasText(productName, "상품명은 필수입니다.");
         Assert.isTrue(price > 0, "상품가격은 0보다 커야합니다.");
         Assert.notNull(discountPolicy, "할인정책은 필수 입니다.");
@@ -42,7 +43,4 @@ public class Product {
         this.discountPolicy = discountPolicy;
     }
 
-    public int getDiscountedPrice() {
-        return discountPolicy.applyDiscount(price);
-    }
 }

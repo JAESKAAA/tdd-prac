@@ -1,7 +1,7 @@
-package com.example.tddprac.payment;
+package com.example.tddprac.payment.domain;
 
 import com.example.tddprac.order.Order;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.example.tddprac.order.OrderEntity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,16 +12,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.util.Assert;
 
-@Entity
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-class Payment {
+public class Payment {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @OneToOne
     private Order order;
     private String cardNumber;
 

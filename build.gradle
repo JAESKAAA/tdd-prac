@@ -32,6 +32,11 @@ dependencies {
     //문자열 포맷팅
     implementation 'com.google.guava:guava:31.1-jre'
 
+    implementation "io.springfox:springfox-boot-starter:3.0.0"
+    implementation 'org.mapstruct:mapstruct:1.4.1.Final'
+    compileOnly('org.mapstruct:mapstruct-processor:1.4.1.Final')
+    annotationProcessor('org.mapstruct:mapstruct-processor:1.4.1.Final')
+
 
 
 }

@@ -1,31 +1,27 @@
 package com.example.tddprac.order;
 
-import com.example.tddprac.product.domain.Product;
-import com.example.tddprac.product.adapter.out.persistence.ProductRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 class OrderAdapter implements OrderPort {
 
-    private final ProductRepository productRepository;
     private final OrderRepository orderRepository;
 
-    public OrderAdapter(ProductRepository productRepository,
-        OrderRepository orderRepository) {
-        this.productRepository = productRepository;
-        this.orderRepository = orderRepository;
-    }
-
-
-    @Override
-    public Product getProductById(Long productId) {
-        return productRepository.findById(productId)
-            .orElseThrow(() -> new IllegalArgumentException("상품이 존재하지 않습니다."));
-
-    }
 
     @Override
     public void save(Order order) {
-        orderRepository.save(order);
+        OrderEntity orderEntity = OrderEntityMapper.INSTANCE.toEntity(order);
+
+        orderRepository.save(orderEntity);
+    }
+
+    @Override
+    public Order getOrder(Long orderId) {
+
+        OrderEntity orderEntity = orderRepository.findById(orderId).orElseThrow(() -> new IllegalArgumentException("해당 주문을 찾을 수 없습니다."));
+
+        return OrderEntityMapper.INSTANCE.toModel(orderEntity);
     }
 }

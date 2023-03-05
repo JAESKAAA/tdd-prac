@@ -1,8 +1,7 @@
 package com.example.tddprac.product.application.service;
 
 import com.example.tddprac.product.application.port.in.ProductWriteUsecase;
-import com.example.tddprac.product.application.port.out.ReadProductPort;
-import com.example.tddprac.product.application.port.out.WriteProductPort;
+import com.example.tddprac.product.application.port.out.WriteProductJpaPort;
 import com.example.tddprac.product.application.service.dto.AddProductRequest;
 import com.example.tddprac.product.application.service.dto.UpdateProductRequest;
 import com.example.tddprac.product.domain.Product;
@@ -15,21 +14,18 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class ProductWriteService implements ProductWriteUsecase {
 
-    private final WriteProductPort writeProductPort;
-    private final ReadProductPort readProductPort;
+    private final WriteProductJpaPort writeProductJpaPort;
 
 
     @Override
     public Long addProduct(AddProductRequest request) {
         final Product product = new Product(request.productName(), request.price(), request.discountPolicy());
 
-        writeProductPort.save(product);
-        return product.getId();
+        return writeProductJpaPort.save(product);
     }
 
     @Override
     public void updateProduct(Long productId, UpdateProductRequest request) {
-        Product product = readProductPort.getProduct(productId);
-        product.update(request.productName(), request.price(), request.discountPolicy());
+        writeProductJpaPort.update(productId, request);
     }
 }

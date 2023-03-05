@@ -1,13 +1,13 @@
-package com.example.tddprac.payment;
+package com.example.tddprac.payment.domain.dto;
 
 import org.springframework.util.Assert;
 
-record PaymentRequest(
+public record PaymentRequest(
     Long orderId,
     String cardNumber
 ) {
 
-    PaymentRequest {
+    public PaymentRequest {
         Assert.notNull(orderId, "주문번호는 필수입니다.");
         Assert.hasText(cardNumber, "카드번호는 필수입니다.");
     }

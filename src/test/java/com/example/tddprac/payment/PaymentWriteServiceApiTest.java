@@ -7,7 +7,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
-public class PaymentServiceApiTest extends ApiTest {
+public class PaymentWriteServiceApiTest extends ApiTest {
 
     @Test
     void 상품결제_API() {
